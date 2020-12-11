@@ -26,7 +26,6 @@ public class Main implements ActionListener {
 
 	private JFrame frame;
 	private Container container;
-	private JPanel panel;
 	private RoundedButton BtnSelect, BtnTime, BtnNewMember, button_2, button_3, BtnCoupon;
 	private int a;
 
@@ -54,16 +53,16 @@ public class Main implements ActionListener {
 		this.a = a;
 		initialize();
 		
-		BtnSelect.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				new Seat();
-				frame.dispose();
-			}
-		});
-		BtnTime.addActionListener(this);
-		BtnNewMember.addActionListener(this);
-		BtnCoupon.addActionListener(this);
-		
+//		BtnSelect.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent e) {
+//				new Seat();
+//				frame.dispose();
+//			}
+//		});
+//		BtnTime.addActionListener(this);
+//		BtnNewMember.addActionListener(this);
+//		BtnCoupon.addActionListener(this);
+//		
 		frame.setResizable(false);
 		frame.setVisible(true);
 	}
@@ -88,13 +87,6 @@ public class Main implements ActionListener {
 //		int heigth = screensize.height / 2;
 		frame.setBounds(120, 150, 1600, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.addComponentListener(new ComponentAdapter() {
-			public void componentResized(ComponentEvent Cevent) {
-				if (panel != null) {
-					panel.setBounds(0, 0, frame.getWidth(), frame.getHeight());
-				}
-			}
-		});
 
 		container = frame.getContentPane();
 		container.setLayout(null);
@@ -337,15 +329,14 @@ public class Main implements ActionListener {
 		BtnCoupon.addActionListener(this);
 	}
 
-	private void clearContainer() {
-		container.removeAll();
-		container.setVisible(false);
-		container.setVisible(true);
-	}
+//	private void clearContainer() {
+//		container.removeAll();
+//		container.setVisible(false);
+//		container.setVisible(true);
+//	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		clearContainer();
 		if (e.getSource() == BtnSelect) {
 			new Seat();
 			frame.dispose();
