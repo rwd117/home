@@ -1,4 +1,4 @@
-package Seat;
+package State;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -26,6 +26,7 @@ public class Seat extends JFrame implements ActionListener{
 	private RoundedButton Btn41, Btn42, Btn43, Btn44, Btn45, Btn46, Btn47, Btn48;
 	private RoundedButton BtnEx,BtnEx2;
 	private JButton BtnBack;
+	private String Text;
 	/**
 	 * Create the application.
 	 */
@@ -1957,15 +1958,207 @@ public class Seat extends JFrame implements ActionListener{
 		frame.add(BtnBack);
 		
 		BtnBack.addActionListener(this);
+		Btn1.addActionListener(this);
+		Btn2.addActionListener(this);
+		Btn4.addActionListener(this);
+		Btn5.addActionListener(this);
+		Btn6.addActionListener(this);
+		Btn7.addActionListener(this);
+		Btn8.addActionListener(this);
+		Btn9.addActionListener(this);
+		Btn10.addActionListener(this);
+		Btn11.addActionListener(this);
+		Btn12.addActionListener(this);
+		Btn13.addActionListener(this);
+		Btn14.addActionListener(this);
+		Btn15.addActionListener(this);
+		Btn16.addActionListener(this);
+		Btn17.addActionListener(this);
+		Btn18.addActionListener(this);
+		Btn19.addActionListener(this);
+		Btn20.addActionListener(this);
+		Btn21.addActionListener(this);
+		Btn22.addActionListener(this);
+		Btn23.addActionListener(this);
+		Btn24.addActionListener(this);
+		Btn25.addActionListener(this);
+		Btn26.addActionListener(this);
+		Btn27.addActionListener(this);
+		Btn28.addActionListener(this);
+		Btn29.addActionListener(this);
+		Btn30.addActionListener(this);
+		Btn31.addActionListener(this);
+		Btn32.addActionListener(this);
+		Btn33.addActionListener(this);
+		Btn34.addActionListener(this);
+		Btn35.addActionListener(this);
+		Btn36.addActionListener(this);
+		Btn37.addActionListener(this);
+		Btn38.addActionListener(this);
+		Btn39.addActionListener(this);
+		Btn40.addActionListener(this);
+		Btn41.addActionListener(this);
+		Btn42.addActionListener(this);
+		Btn43.addActionListener(this);
+		Btn44.addActionListener(this);
+		Btn45.addActionListener(this);
+		Btn46.addActionListener(this);
+		Btn47.addActionListener(this);
+		Btn48.addActionListener(this);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+			
 		if(e.getActionCommand().equals("Ȩ")) {
 			new Main(1);
 			frame.dispose();
-			
-		}
+//		}else if(e.getSource().equals(Btn1)) {
+//			Text=Btn1.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn2)) {
+//			Text=Btn2.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn3)) {
+//			Text=Btn3.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn4)) {
+//			Text=Btn4.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn5)) {
+//			Text=Btn5.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn6)) {
+//			Text=Btn6.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn7)) {
+//			Text=Btn7.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn8)) {
+//			Text=Btn8.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn9)) {
+//			Text=Btn9.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn10)) {
+//			Text=Btn10.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn11)) {
+//			Text=Btn11.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn12)) {
+//			Text=Btn12.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn13)) {
+//			Text=Btn13.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn14)) {
+//			Text=Btn14.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn15)) {
+//			Text=Btn15.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn16)) {
+//			Text=Btn16.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn17)) {
+//			Text=Btn17.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn18)) {
+//			Text=Btn18.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn19)) {
+//			Text=Btn19.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn20)) {
+//			Text=Btn20.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn21)) {
+//			Text=Btn21.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn22)) {
+//			Text=Btn22.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn23)) {
+//			Text=Btn23.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn24)) {
+//			Text=Btn24.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn25)) {
+//			Text=Btn25.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn26)) {
+//			Text=Btn26.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn27)) {
+//			Text=Btn27.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn28)) {
+//			Text=Btn28.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn29)) {
+//			Text=Btn29.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn30)) {
+//			Text=Btn30.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn31)) {
+//			Text=Btn31.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn32)) {
+//			Text=Btn32.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn33)) {
+//			Text=Btn33.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn34)) {
+//			Text=Btn34.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn35)) {
+//			Text=Btn35.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn36)) {
+//			Text=Btn36.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn37)) {
+//			Text=Btn37.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn38)) {
+//			Text=Btn38.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn39)) {
+//			Text=Btn39.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn40)) {
+//			Text=Btn40.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn41)) {
+//			Text=Btn41.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn42)) {
+//			Text=Btn42.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn43)) {
+//			Text=Btn43.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn44)) {
+//			Text=Btn44.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn45)) {
+//			Text=Btn45.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn46)) {
+//			Text=Btn46.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn47)) {
+//			Text=Btn47.getText();
+//			new SeatState(Text);
+//		}else if(e.getSource().equals(Btn48)) {
+//			Text=Btn48.getText();
+//			new SeatState(Text);
+//		}
+			}
 	}
 }

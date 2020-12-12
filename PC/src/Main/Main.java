@@ -1,6 +1,7 @@
 package Main;
 
 import java.awt.Color;
+
 import java.awt.Container;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -20,11 +21,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import Graphics.RoundedButton;
-import Seat.Seat;
+import State.Seat;
+import User.TimeInsert;
+import State.Select;
 
 public class Main implements ActionListener {
 
 	private JFrame frame;
+	private JPanel pan;
 	private Container container;
 	private RoundedButton BtnSelect, BtnTime, BtnNewMember, button_2, button_3, BtnCoupon;
 	private int a;
@@ -45,24 +49,15 @@ public class Main implements ActionListener {
 			}
 		});
 	}
-
+	
 	/**
 	 * Create the application.
 	 */
 	public Main(int a) {
 		this.a = a;
-		initialize();
 		
-//		BtnSelect.addActionListener(new ActionListener() {
-//			public void actionPerformed(ActionEvent e) {
-//				new Seat();
-//				frame.dispose();
-//			}
-//		});
-//		BtnTime.addActionListener(this);
-//		BtnNewMember.addActionListener(this);
-//		BtnCoupon.addActionListener(this);
-//		
+		initialize();
+			
 		frame.setResizable(false);
 		frame.setVisible(true);
 	}
@@ -70,7 +65,8 @@ public class Main implements ActionListener {
 	public Main() {
 		initialize();
 	}
-
+	
+	
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -79,7 +75,8 @@ public class Main implements ActionListener {
 		frame.setTitle("인터존 PC방");
 		frame.getContentPane().setBackground(new Color(051, 051, 051));
 //		Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
-
+		container = frame.getContentPane();
+		container.setLayout(null);
 		// 뜨는 곳 모니터 기준
 //		int x = screensize.width / 4;
 //		int y = screensize.height / 4;
@@ -322,6 +319,7 @@ public class Main implements ActionListener {
 		button_3.setBounds(1087, 423, 300, 300);
 		button_3.setFocusPainted(false);
 		frame.add(button_3);
+		
 
 		BtnSelect.addActionListener(this);
 		BtnTime.addActionListener(this);
@@ -341,7 +339,8 @@ public class Main implements ActionListener {
 			new Seat();
 			frame.dispose();
 		} else if (e.getSource() == BtnTime) {
-
+			new Select();
+			frame.dispose();
 		} else if (e.getSource() == BtnNewMember) {
 
 		} else if (e.getSource() == BtnCoupon) {
