@@ -1,4 +1,4 @@
-package User;
+package State;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -20,13 +20,6 @@ public class ImpoNotice extends JFrame{
 	private JTextArea TA;
 	private String Time,Name;
 
-	/**
-	 * Create the application.
-	 */
-	public ImpoNotice() {
-		initialize();
-	}
-	
 	public ImpoNotice(String Time,String Name) {
 		this.Time=Time;
 		this.Name=Name;

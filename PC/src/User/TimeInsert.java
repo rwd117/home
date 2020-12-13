@@ -20,6 +20,7 @@ import javax.swing.border.Border;
 
 import Graphics.RoundedButton;
 import Main.Main;
+import State.ImpoNotice;
 
 public class TimeInsert implements MouseListener, ActionListener {
 
