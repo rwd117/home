@@ -12,22 +12,26 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.Border;
 
 import Graphics.RoundedButton;
+import Main.Main;
 
 public class TimeInsert implements MouseListener, ActionListener {
 
 	private JFrame frame = new JFrame();
 	private JPanel Panel;
-	private JButton btnBack;
+	private JButton BtnPay, BtnCan;
 	private RoundedButton Btn1, Btn2, Btn3, Btn4, Btn5, Btn6, Btn7, Btn8;
 	private JScrollPane scrollPane;
 	private String Text;
 	private JTextArea TA;
+	private String Time, Money;
+	private boolean TAcheck = false;
 
 	public static void main(String[] args) {
 		new TimeInsert();
@@ -150,6 +154,14 @@ public class TimeInsert implements MouseListener, ActionListener {
 
 		scrollPane.setViewportView(TA);
 
+		BtnPay = new JButton("\uACB0\uC81C");
+		BtnPay.setBounds(1069, 442, 179, 47);
+		Panel.add(BtnPay);
+
+		BtnCan = new JButton("\uCDE8\uC18C");
+		BtnCan.setBounds(1370, 440, 179, 47);
+		Panel.add(BtnCan);
+
 		Btn1.addMouseListener(this);
 		Btn2.addMouseListener(this);
 		Btn3.addMouseListener(this);
@@ -158,12 +170,66 @@ public class TimeInsert implements MouseListener, ActionListener {
 		Btn6.addMouseListener(this);
 		Btn7.addMouseListener(this);
 		Btn8.addMouseListener(this);
+		BtnPay.addActionListener(this);
+		BtnCan.addActionListener(this);
+
+	}
+
+	public void Clear() {
+		TAcheck = false;
+		TA.setText("");
 
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		if (TAcheck == false) {
+			if (e.getSource().equals(BtnCan)) {
+				int result = JOptionPane.showConfirmDialog(null, "홈 화면으로 돌아 가시겠습니까?", "확인 메시지",
+						JOptionPane.YES_NO_OPTION);
+
+				if (result == JOptionPane.CANCEL_OPTION || result == JOptionPane.CLOSED_OPTION) {
+
+					Clear();
+
+				} else if (result == JOptionPane.YES_OPTION) {
+
+					new Main(1);
+					frame.dispose();
+				}
+
+			} else {
+				JOptionPane.showMessageDialog(null, "시간을 선택 해 주세요");
+				return;
+			}
+		} else {
+			if (e.getSource().equals(BtnPay)) {
+				int result = JOptionPane.showConfirmDialog(null, Money + "을 충전 하시겠습니까?", "확인 메시지",
+						JOptionPane.YES_NO_OPTION);
+				if (result == JOptionPane.CLOSED_OPTION || result == JOptionPane.CANCEL_OPTION) {
+					
+						Clear();
+				} else if (result == JOptionPane.YES_OPTION) {
+					String Name="아무개";
+					new ImpoNotice(Time,Name);
+					frame.dispose();
+				}
+
+			} else if (e.getSource().equals(BtnCan)) {
+				int result = JOptionPane.showConfirmDialog(null, "홈 화면으로 돌아 가시겠습니까?", "확인 메시지",
+						JOptionPane.YES_NO_OPTION);
+
+				if (result == JOptionPane.CANCEL_OPTION || result == JOptionPane.CLOSED_OPTION) {
+
+					Clear();
+
+				} else if (result == JOptionPane.YES_OPTION) {
+
+					new Main(1);
+					frame.dispose();
+				}
+			}
+		}
 
 	}
 
@@ -171,44 +237,51 @@ public class TimeInsert implements MouseListener, ActionListener {
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource().equals(Btn1)) {
+			TAcheck = true;
 			Text = Btn1.getText();
-			String Time = Text.substring(0, 5);
-			String Money = Text.substring(16);
+			Time = Text.substring(0, 5);
+			Money = Text.substring(16);
 			TA.setText("추가 시간 : " + Time + "\n" + "지불 하실 금액은" + Money + "입니다");
 		} else if (e.getSource().equals(Btn2)) {
+			TAcheck = true;
 			Text = Btn2.getText();
-			String Time = Text.substring(0, 5);
-			String Money = Text.substring(16);
+			Time = Text.substring(0, 5);
+			Money = Text.substring(16);
 			TA.setText("추가 시간 : " + Time + "\n" + "지불 하실 금액은" + Money + "입니다");
 		} else if (e.getSource().equals(Btn3)) {
+			TAcheck = true;
 			Text = Btn3.getText();
-			String Time = Text.substring(0, 5);
-			String Money = Text.substring(16);
+			Time = Text.substring(0, 5);
+			Money = Text.substring(16);
 			TA.setText("추가 시간 : " + Time + "\n" + "지불 하실 금액은" + Money + "입니다");
 		} else if (e.getSource().equals(Btn4)) {
+			TAcheck = true;
 			Text = Btn4.getText();
-			String Time = Text.substring(0, 5);
-			String Money = Text.substring(16);
+			Time = Text.substring(0, 5);
+			Money = Text.substring(16);
 			TA.setText("추가 시간 : " + Time + "\n" + "지불 하실 금액은" + Money + "입니다");
 		} else if (e.getSource().equals(Btn5)) {
+			TAcheck = true;
 			Text = Btn5.getText();
-			String Time = Text.substring(0, 5);
-			String Money = Text.substring(16);
+			Time = Text.substring(0, 5);
+			Money = Text.substring(16);
 			TA.setText("추가 시간 : " + Time + "\n" + "지불 하실 금액은" + Money + "입니다");
 		} else if (e.getSource().equals(Btn6)) {
+			TAcheck = true;
 			Text = Btn6.getText();
-			String Time = Text.substring(0, 5);
-			String Money = Text.substring(13);
+			Time = Text.substring(0, 5);
+			Money = Text.substring(13);
 			TA.setText("추가 시간 : " + Time + "\n" + "지불 하실 금액은" + Money + "입니다");
 		} else if (e.getSource().equals(Btn7)) {
 			Text = Btn7.getText();
-			String Time = Text.substring(0, 5);
-			String Money = Text.substring(13);
+			Time = Text.substring(0, 5);
+			Money = Text.substring(13);
 			TA.setText("추가 시간 : " + Time + "\n" + "지불 하실 금액은" + Money + "입니다");
 		} else if (e.getSource().equals(Btn8)) {
+			TAcheck = true;
 			Text = Btn8.getText();
-			String Time = Text.substring(0, 6);
-			String Money = Text.substring(12);
+			Time = Text.substring(0, 6);
+			Money = Text.substring(12);
 			TA.setText("추가 시간 : " + Time + "\n" + "지불 하실 금액은" + Money + "입니다");
 		}
 	}
