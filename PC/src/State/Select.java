@@ -14,10 +14,10 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 import Graphics.RoundedButton;
-import Main.Main;
+import Main.MainPc;
 import User.TimeInsert;
 import User.UserLogin;
-import User.UnUserLogin;
+
 public class Select extends JFrame implements ActionListener{
 
 	private RoundedButton BtnUser, BtnNoUser;
@@ -28,9 +28,6 @@ public class Select extends JFrame implements ActionListener{
 		new Select();
 	}
 	
-	/**
-	 * Create the application.
-	 */
 	public Select() {
 		initialize();
 	}
@@ -43,7 +40,7 @@ public class Select extends JFrame implements ActionListener{
 		frame.getContentPane().setBackground(new Color(051, 051, 051));
 		frame.setBounds(120, 150, 1600, 800);
 		frame.setVisible(true);
-		frame.setLayout(null);
+		frame.getContentPane().setLayout(null);
 		
 		BtnUser = new RoundedButton("\uD68C\uC6D0"){
 			@Override
@@ -81,7 +78,7 @@ public class Select extends JFrame implements ActionListener{
 		BtnUser.setFont(new Font("±¼¸²", Font.PLAIN, 30));
 		BtnUser.setBounds(400, 249, 271, 249);
 		BtnUser.setBackground(new Color(051, 102, 153));
-		frame.add(BtnUser);
+		frame.getContentPane().add(BtnUser);
 		
 		BtnNoUser = new RoundedButton("\uBE44\uD68C\uC6D0"){
 			@Override
@@ -120,11 +117,11 @@ public class Select extends JFrame implements ActionListener{
 		BtnNoUser.setFont(new Font("±¼¸²", Font.PLAIN, 30));
 		BtnNoUser.setBounds(900, 249, 271, 249);
 		BtnNoUser.setBackground(new Color(051, 102, 153));
-		frame.add(BtnNoUser);
+		frame.getContentPane().add(BtnNoUser);
 		
 		BtnBack = new JButton("È¨");
 		BtnBack.setBounds(1501, 28, 75, 75);
-		frame.add(BtnBack);
+		frame.getContentPane().add(BtnBack);
 		
 		BtnBack.addActionListener(this);
 		BtnUser.addActionListener(this);
@@ -135,12 +132,13 @@ public class Select extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource().equals(BtnUser)) {
-			new UserLogin();
+			new UserLogin(true);
 			frame.dispose();
 		}else if(e.getSource().equals(BtnNoUser)) {
-			
+			new UserLogin(false);
+			frame.dispose();
 		}else if(e.getActionCommand().equals("È¨")) {
-			new Main(1);
+			new MainPc();
 			frame.dispose();
 		}
 	}

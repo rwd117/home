@@ -25,11 +25,9 @@ import State.Seat;
 import User.TimeInsert;
 import State.Select;
 
-public class Main implements ActionListener {
+public class MainPc extends JFrame implements ActionListener {
 
-	private JFrame frame;
-	private JPanel pan;
-	private Container container;
+	private JFrame frame = new JFrame();
 	private RoundedButton BtnSelect, BtnTime, BtnNewMember, button_2, button_3, BtnCoupon;
 	private int a;
 
@@ -38,31 +36,10 @@ public class Main implements ActionListener {
 	 */
 
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Main window = new Main();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-	
-	/**
-	 * Create the application.
-	 */
-	public Main(int a) {
-		this.a = a;
-		
-		initialize();
-			
-		frame.setResizable(false);
-		frame.setVisible(true);
+		new MainPc();	
 	}
 
-	public Main() {
+	public MainPc() {
 		initialize();
 	}
 	
@@ -71,22 +48,24 @@ public class Main implements ActionListener {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frame = new JFrame();
 		frame.setTitle("인터존 PC방");
 		frame.getContentPane().setBackground(new Color(051, 051, 051));
 //		Dimension screensize = Toolkit.getDefaultToolkit().getScreenSize();
-		container = frame.getContentPane();
-		container.setLayout(null);
+//		container = frame.getContentPane();
+//		container.setLayout(null);
 		// 뜨는 곳 모니터 기준
 //		int x = screensize.width / 4;
 //		int y = screensize.height / 4;
 //		int width = screensize.width / 2;
 //		int heigth = screensize.height / 2;
+//		container = frame.getContentPane();
+//		container.setLayout(null);
+
 		frame.setBounds(120, 150, 1600, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+		frame.setLayout(null);
 
-		container = frame.getContentPane();
-		container.setLayout(null);
 
 		BtnSelect = new RoundedButton("좌석 보기") {
 			@Override

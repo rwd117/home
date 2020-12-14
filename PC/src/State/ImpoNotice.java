@@ -11,7 +11,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.Border;
 
-import Main.Main;
+import Main.MainPc;
 
 public class ImpoNotice extends JFrame{
 
@@ -19,10 +19,24 @@ public class ImpoNotice extends JFrame{
 	private JScrollPane scrollPane;
 	private JTextArea TA;
 	private String Time,Name;
-
-	public ImpoNotice(String Time,String Name) {
-		this.Time=Time;
-		this.Name=Name;
+	private int SeatNumber;
+	
+	public ImpoNotice(String Ti,int index) {
+		this.Time=Ti;
+		this.SeatNumber=index;
+		
+		SeatNumber=SeatNumber+1;
+		
+		initialize();
+		
+		TA.setText("카드 번호 : "+SeatNumber+"\n"+"추가 시간 : " + Time + "\n" + "남은 시간 : " +Time + " 입니다");
+		
+		Time();
+	}
+	
+	public ImpoNotice(String Ti,String Na) {
+		this.Time=Ti;
+		this.Name=Na;
 		
 		initialize();
 		
@@ -67,7 +81,7 @@ public class ImpoNotice extends JFrame{
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-				new Main(1);
+				new MainPc();
 				frame.dispose();
 				
 			}

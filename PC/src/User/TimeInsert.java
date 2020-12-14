@@ -19,7 +19,7 @@ import javax.swing.JTextArea;
 import javax.swing.border.Border;
 
 import Graphics.RoundedButton;
-import Main.Main;
+import Main.MainPc;
 import State.ImpoNotice;
 
 public class TimeInsert implements MouseListener, ActionListener {
@@ -33,15 +33,22 @@ public class TimeInsert implements MouseListener, ActionListener {
 	private JTextArea TA;
 	private String Time, Money;
 	private boolean TAcheck = false;
+	private boolean Check = true;
+	private String UserName;
+	private int index;
 
-	public static void main(String[] args) {
-		new TimeInsert();
+	// 회원
+	public TimeInsert(boolean Ch, String Na) {
+		this.Check = Ch;
+		this.UserName = Na;
+		initialize();
 	}
 
-	/**
-	 * Create the application.
-	 */
-	public TimeInsert() {
+	// 비회원
+	public TimeInsert(boolean Ch, int a) {
+		this.Check = Ch;
+		this.index = a;
+
 		initialize();
 	}
 
@@ -195,7 +202,7 @@ public class TimeInsert implements MouseListener, ActionListener {
 
 				} else if (result == JOptionPane.YES_OPTION) {
 
-					new Main(1);
+					new MainPc();
 					frame.dispose();
 				}
 
@@ -208,12 +215,18 @@ public class TimeInsert implements MouseListener, ActionListener {
 				int result = JOptionPane.showConfirmDialog(null, Money + "을 충전 하시겠습니까?", "확인 메시지",
 						JOptionPane.YES_NO_OPTION);
 				if (result == JOptionPane.CLOSED_OPTION || result == JOptionPane.CANCEL_OPTION) {
-					
-						Clear();
+
+					Clear();
 				} else if (result == JOptionPane.YES_OPTION) {
-					String Name="아무개";
-					new ImpoNotice(Time,Name);
-					frame.dispose();
+					if (Check==true) {
+						new ImpoNotice(Time, UserName);
+						frame.dispose();
+
+					} else if(Check==false){
+						new ImpoNotice(Time, index);
+						frame.dispose();
+						
+					}
 				}
 
 			} else if (e.getSource().equals(BtnCan)) {
@@ -226,7 +239,7 @@ public class TimeInsert implements MouseListener, ActionListener {
 
 				} else if (result == JOptionPane.YES_OPTION) {
 
-					new Main(1);
+					new MainPc();
 					frame.dispose();
 				}
 			}
