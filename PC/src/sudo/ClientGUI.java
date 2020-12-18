@@ -1,4 +1,4 @@
-package Chat;
+package sudo;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;

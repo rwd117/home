@@ -1,4 +1,4 @@
-package Chat;
+package sudo;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
